@@ -1,6 +1,10 @@
 from turtle import *
 from random import randrange
 from freegames import square, vector
+import random   # Se hace la inclusión de la librería random
+
+# Juan Angel Mora Moreno | A00517141
+# Nombre y matrícula
 
 food = vector(0, 0)
 snake = [vector(10, 0)]
@@ -15,13 +19,34 @@ def inside(head):
     "Return True if head inside boundaries."
     return -200 < head.x < 190 and -200 < head.y < 190
 
+# Función que ejerce el movimiento de la serpiente y de la comida
 def move():
     "Move snake forward one segment."
     head = snake[-1].copy()
     head.move(aim)
-
+    
+    # Uso de la función random para escoger un número al azar
+    numero = random.randint(1,5)
+    
     if not inside(head) or head in snake:
-        square(head.x, head.y, 9, 'red')
+      if numero == 1:
+        square(head.x, head.y, 9, 'white')
+        update()
+        return
+      elif numero == 2:
+        square(head.x, head.y, 9, 'black')
+        update()
+        return
+      elif numero == 3:
+        square(head.x, head.y, 9, 'green')
+        update()
+        return
+      elif numero == 4:
+        square(head.x, head.y, 9, 'purple')
+        update()
+        return
+      elif numero == 5:
+        square(head.x, head.y, 9, 'yellow')
         update()
         return
 
@@ -37,7 +62,16 @@ def move():
     clear()
 
     for body in snake:
+      if numero == 1:
         square(body.x, body.y, 9, 'black')
+      elif numero == 2:
+        square(body.x, body.y, 9, 'white')
+      elif numero == 3:
+        square(body.x, body.y, 9, 'yellow')
+      elif numero == 4:
+        square(body.x, body.y, 9, 'green')
+      elif numero == 5:
+        square(body.x, body.y, 9, 'blue')
 
     square(food.x, food.y, 9, 'green')
     update()
