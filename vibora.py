@@ -1,7 +1,6 @@
 from turtle import *
 from random import randrange
 from freegames import square, vector
-import random
 
 food = vector(0, 0)
 snake = [vector(10, 0)]
