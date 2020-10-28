@@ -46,24 +46,7 @@ def move():
     numero = random.randint(1,5)
     
     if not inside(head) or head in snake:
-      if numero == 1:
-        square(head.x, head.y, 9, 'white')
-        update()
-        return
-      elif numero == 2:
-        square(head.x, head.y, 9, 'black')
-        update()
-        return
-      elif numero == 3:
-        square(head.x, head.y, 9, 'green')
-        update()
-        return
-      elif numero == 4:
-        square(head.x, head.y, 9, 'purple')
-        update()
-        return
-      elif numero == 5:
-        square(head.x, head.y, 9, 'yellow')
+        square(head.x, head.y, 9, 'red')
         update()
         return
 
