@@ -10,11 +10,13 @@ food = vector(0, 0)
 snake = [vector(10, 0)]
 aim = vector(0, -10)
 
+# Función que cambia la dirección de la serpiente
 def change(x, y):
     "Change snake direction."
     aim.x = x
     aim.y = y
 
+# Función que detecta si la cabeza de la serpiente colisiona con los ejes
 def inside(head):
     "Return True if head inside boundaries."
     return -200 < head.x < 190 and -200 < head.y < 190
@@ -51,7 +53,8 @@ def move():
         return
 
     snake.append(head)
-
+    
+    # selecciona las posiciones de la aparición de las comidas
     if head == food:
         print('Snake:', len(snake))
         food.x = randrange(-15, 15) * 10
@@ -60,7 +63,8 @@ def move():
         snake.pop(0)
 
     clear()
-
+    
+    # Selección de color de la serpiente
     for body in snake:
       if numero == 1:
         square(body.x, body.y, 9, 'black')
