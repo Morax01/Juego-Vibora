@@ -74,8 +74,19 @@ def move():
         square(body.x, body.y, 9, 'green')
       elif numero == 5:
         square(body.x, body.y, 9, 'blue')
-
-    square(food.x, food.y, 9, 'green')
+    
+    # Selección de color aleatorio de la comida
+    if numero == 1:
+      square(food.x, food.y, 9, 'white')
+    elif numero == 2:
+      square(food.x, food.y, 9, 'black')
+    elif numero == 3:
+      square(food.x, food.y, 9, 'blue')
+    elif numero == 4:
+      square(food.x, food.y, 9, 'yellow')
+    elif numero == 5:
+      square(food.x, food.y, 9, 'green')
+    
     update()
     ontimer(move, 100)
 
