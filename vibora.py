@@ -4,7 +4,7 @@ from freegames import square, vector
 import random   # Se hace la inclusión de la librería random
 
 # Juan Angel Mora Moreno | A00517141
-# Nombre y matrícula
+# Isaac Arredondo Padrón | A00828359
 
 food = vector(0, 0)
 snake = [vector(10, 0)]
@@ -15,6 +15,7 @@ def change(x, y):
     "Change snake direction."
     aim.x = x
     aim.y = y
+    
 # Fucion que cambia la dirección de la comida 
 def changeFood(x, y):
     food.x += x
@@ -67,7 +68,7 @@ def move():
       if numero == 1:
         square(body.x, body.y, 9, 'black')
       elif numero == 2:
-        square(body.x, body.y, 9, 'white')
+        square(body.x, body.y, 9, 'orange')
       elif numero == 3:
         square(body.x, body.y, 9, 'yellow')
       elif numero == 4:
@@ -77,7 +78,7 @@ def move():
     
     # Selección de color aleatorio de la comida
     if numero == 1:
-      square(food.x, food.y, 9, 'white')
+      square(food.x, food.y, 9, 'orange')
     elif numero == 2:
       square(food.x, food.y, 9, 'black')
     elif numero == 3:
@@ -90,6 +91,7 @@ def move():
     update()
     ontimer(move, 100)
 
+# Aqui inicializamos el juego y utilizamos la funcion lambda para cambio de direcciones
 setup(420, 420, 370, 0)
 hideturtle()
 tracer(False)
