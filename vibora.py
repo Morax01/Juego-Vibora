@@ -15,7 +15,11 @@ def change(x, y):
     "Change snake direction."
     aim.x = x
     aim.y = y
-
+# Fucion que cambia la dirección de la comida 
+def changeFood(x, y):
+    food.x += x
+    food.y += y
+    
 # Función que detecta si la cabeza de la serpiente colisiona con los ejes
 def inside(head):
     "Return True if head inside boundaries."
@@ -26,6 +30,17 @@ def move():
     "Move snake forward one segment."
     head = snake[-1].copy()
     head.move(aim)
+    
+    # Los siguientes condicionales hacen que la comida se mueva random y valida que no salga del tablero
+    dire = randrange(0,4)
+    if (dire == 0 and food.x < 170):
+      changeFood(10, 0)
+    elif (dire == 1 and food.x > -180):
+      changeFood(-10, 0)
+    elif (dire == 2 and food.y < 170):
+      changeFood(0, 10)
+    elif (dire == 3 and food.y > -180):
+      changeFood(0, -10)
     
     # Uso de la función random para escoger un número al azar
     numero = random.randint(1,5)
